@@ -1,0 +1,32 @@
+
+<div class="container" style="width: 80%; margin: auto;background-color: rgb(75, 79, 82);color: white;">
+    <h2>Blogs you want to read later</h2>
+    <div *ngIf="read.length === 0;">
+        <p>There is no bookmark.</p>
+    </div>
+    <ng-container *ngFor="let blogs of read">
+        <div class="news-container">
+            <div class="news-card" style="border-radius: 10px; background-color:rgb(75, 79, 82);color: white;">
+                <div>
+                    <img [src]="blogs.url" style="width:100%; height:100px;">
+                </div>
+                <div class="card-body">
+                <p class="card-text"><b> {{blogs.title}}</b></p>
+                <p class="card-text"> {{blogs.content}}</p>
+                </div>
+                <div class="news-buttons">
+                    <button class="btn btn-detail" routerLink = "/card/{{blogs.id}}">Details</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+
+
+
+
+
+
+

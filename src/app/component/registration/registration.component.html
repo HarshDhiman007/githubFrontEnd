@@ -1,0 +1,24 @@
+<div>
+  <form (ngSubmit)="onSubmit(reg.value)" #reg="ngForm">
+            <label>username</label>
+            <input type="text"  style="color: black;" name="username" ngModel />
+            <br>
+            <label>first name</label>
+            <input type="text" style="color: black;" name="fName" ngModel />
+            <br>
+            <label>last name</label>
+            <input type="text"  style="color: black;" name="lName" ngModel />
+            <br>
+            <label>password</label>
+            <input type="text"  style="color: black;" name="password" ngModel />
+            <br>
+            <label>confirm password</label>
+            <input type="text"  style="color: black;" name="cnfrmpassword" ngModel />
+            <br>
+            <br>
+            <label>email</label>
+            <input type="text"  style="color: black;" name="email" ngModel />
+            <br>
+            <input style="color: black;" type="submit">
+  </form>
+  </div>

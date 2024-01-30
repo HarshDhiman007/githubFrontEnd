@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<div>
+<form #blogForm="ngForm">
+          <label>Author</label>
+          <input type="text"  style="color: black;" name="author" [(ngModel)]="blog.author" />
+          <br>
+          <label>Title</label>
+          <input type="text" style="color: black;" name="title" [(ngModel)]="blog.title"/>
+          <br>
+          <label>Description</label>
+          <input type="text"  style="color: black;" name="description" [(ngModel)]="blog.description" />
+          <br>
+          <label>Content</label>
+          <input type="text"  style="color: black;" name="content"[(ngModel)]="blog.content" />
+          <br>
+          <label>PublishedAt</label>
+          <input type="text"  style="color: black;" name="dob" [(ngModel)]="blog.dob"/>
+          <br>
+          <div>
+            <input type="file" name="" id="" (change)="onChangeFileField($event)" >
+          </div>
+          <button style="color: black;" (click)="addBlog()">Add Blog</button>
+</form>
+<style></style>
+</div>

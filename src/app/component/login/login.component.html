@@ -1,0 +1,25 @@
+<div class="card" style="width: 60%; padding: 10px; margin: auto;">
+    <div class="card-body">
+        
+      <h2 class="card-title" style="text-align: center;">Login into StackBlogs</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label"><b>Username</b></label>
+          <input type="text" style="color: black;" name="username" [(ngModel)]="credentials.username"/>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label"><b>Password</b></label>
+          <input type="text" style="color: black;" name="username" [(ngModel)]="credentials.password"/>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe"><b>Remember me</b></label>
+        </div>  
+          <button style="color: black; background-color: rgb(239, 236, 236);" type="submit" class="btn btn-primary">Login</button>
+        <div>
+          <h4>Don't have an account? <a routerLink="/register">register</a></h4>
+        </div>
+      </form>
+    </div>
+  </div>
+  

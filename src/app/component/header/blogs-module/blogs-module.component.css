@@ -1,0 +1,14 @@
+*{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    border-radius: 10px;
+    border-width: 10px;
+}
+.form-control{
+    text-align: center;
+    color: white;
+    border-radius: 2px;
+    border-width: 2px;
+}

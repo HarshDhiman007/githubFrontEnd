@@ -1,0 +1,29 @@
+<div class="card" style="width: 60%; margin: auto;">
+    <img src="./assets/{{Blogs.imgName}}" class="card-img-top" alt="...">
+    <div class="card-body" style="color: white;background-color: rgb(67, 63, 63);">
+      <p class="card-text"><strong>Author: </strong>{{ Blogs.author }}</p>
+      <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>
+      <p class="card-text"><strong>Content: </strong> {{ Blogs.content }}</p>
+      <p class="card-text"><strong>Description: </strong> {{ Blogs.description }}</p>
+      <p class="card-text"><strong>PublishedAt: </strong> {{ Blogs.dob}}</p>
+</div>
+<div>
+  <ng-container *ngFor="let com of comm" >
+    <div class="news-container">
+        <div class="news-card" style="background-color: rgb(75, 79, 82);">
+            <div class="card-body">
+            <p class="card-text" style="color: white;"><b> {{com.commentUsername}}</b></p>
+            <p class="card-text" style="color: white;"> {{com.comment}}</p>
+            </div>
+    </div> 
+  </div> 
+  </ng-container>
+</div>
+  <form class="comment-card" style="margin: 10px;padding: 10px; background-color: rgb(74, 73, 73)" #blogForm="ngForm">
+            <p style="color: black;" name="commentUsername" [(ngModel)]="comme.commentUsername"></p>
+            <br>
+            <label style="color: white;">Enter your comment</label>
+            <input class="placeholder" type="text" (change)="onChangeFileField($event)" name="comment" [(ngModel)]="comme.comment" placeholder="Enter your views"/>
+            <br>
+            <button style="color: wheat;background-color: rgb(123, 30, 30);margin: 10px;" (click)="addComm()">add comments</button>
+  </form>
