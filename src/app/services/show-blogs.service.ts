@@ -9,6 +9,6 @@ export class ShowBlogsService {
   constructor(private http:HttpClient) { }
   getBlogs()
   {
-    return this.http.get(`http://localhost:9094/dashboard/showBlogs`)
+    return this.http.get(`http://gateway:9094/dashboard/showBlogs`)
   }
 }
