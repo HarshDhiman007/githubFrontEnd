@@ -7,7 +7,7 @@ import { register } from '../model/register';
   providedIn: 'root'
 })
 export class RegsiterSerService {
-  baseUrl="http://localhost:9094/auth/register"
+  baseUrl="http://gateway:9094/auth/register"
 
   constructor(private httpcl:HttpClient)  { }
   registerUser(reg:register):Observable<Object>{

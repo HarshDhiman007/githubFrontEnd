@@ -32,7 +32,10 @@ export class RegistrationComponent{
     this.regSer.registerUser(reg).subscribe(data=>{
       alert("User registered successfully")
       this.router.navigate(["/dashboard"])
-    },error=>alert("user is not registered")
+    },error=>{
+      alert("user is not registered")
+      console.log(error)
+    }
     )
   }
 

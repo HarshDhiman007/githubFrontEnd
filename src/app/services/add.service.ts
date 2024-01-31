@@ -11,11 +11,11 @@ export class AddService {
   constructor(private blgs:BlogsService,private http:HttpClient) { }
   addComments(info:comment)
   {
-    return this.http.post(`http://localhost:9094/dashboard/addComment`,info)
+    return this.http.post(`http://gateway:9094/dashboard/addComment`,info)
   }
   showComments(id:string)
   {
-    return this.http.get(`http://localhost:9094/dashboard/getComments/${id}`)
+    return this.http.get(`http://gateway:9094/dashboard/getComments/${id}`)
   }
 }
 
