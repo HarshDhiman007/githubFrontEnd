@@ -1,16 +1,17 @@
+  <div style="background-image: url(./assets/db.jpg);">
   <div class="container" style=" width :80%; margin: auto;">
     <h1><b style="color: white;border-radius: 10px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: bold;">Today's Blogs</b></h1>
     <ng-container *ngFor="let blog of Blogs" >
         <div class="news-container">
-            <div class="news-card" style="background-color: rgb(75, 79, 82);">
+            <div class="news-card" style="background-color: rgb(243, 238, 238);color: black;box-shadow: 0 0  20px black ">
                 <div>
                     <img src="./assets/{{blog.imgName}}" style="width:100%; height:100px;
                         float: left;
                         object-fit: cover;"/>
                 </div>
                 <div class="card-body">
-                <p class="card-text" style="color: white;"><b> {{blog.title}}</b></p>
-                <p class="card-text" style="color: white;"> {{blog.content}}</p>
+                <p class="card-text" style="color: black;"><b> {{blog.title}}</b></p>
+                <p class="card-text" style="color: black;"> {{blog.content}}</p>
                 </div>
                 <div class="news-buttons">
                     <!-- <button class="btn btn-read" (click)="readlater(blog)">Later</button> -->
@@ -21,3 +22,4 @@
         </div>  
     </ng-container>
 </div>
+

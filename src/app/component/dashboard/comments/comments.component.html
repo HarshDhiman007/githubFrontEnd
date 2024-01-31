@@ -1,29 +1,42 @@
-<div class="card" style="width: 60%; margin: auto;">
+<div class="temp" style="background-image: url(./assets/db.jpg)" >
+<div class="card" style="width: 60%; margin: auto;background-color: rgb(67, 63, 63);">
     <img src="./assets/{{Blogs.imgName}}" class="card-img-top" alt="...">
-    <div class="card-body" style="color: white;background-color: rgb(67, 63, 63);">
+    <div class="card-body" style="color: rgb(255, 255, 255);background-color: rgb(67, 63, 63);">
       <p class="card-text"><strong>Author: </strong>{{ Blogs.author }}</p>
       <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>
       <p class="card-text"><strong>Content: </strong> {{ Blogs.content }}</p>
-      <p class="card-text"><strong>Description: </strong> {{ Blogs.description }}</p>
       <p class="card-text"><strong>PublishedAt: </strong> {{ Blogs.dob}}</p>
 </div>
+
 <div>
+  <div>
+    <button (click)="showComment()" style="color: wheat;background-color: rgb(123, 30, 30);margin: 10px;">{{nameCom}}</button>
+  </div>
+  <div *ngIf="isAllow()">
+
   <ng-container *ngFor="let com of comm" >
     <div class="news-container">
-        <div class="news-card" style="background-color: rgb(75, 79, 82);">
+        <div class="news-card" style="background-color: rgb(110, 96, 96);">
             <div class="card-body">
-            <p class="card-text" style="color: white;"><b> {{com.commentUsername}}</b></p>
-            <p class="card-text" style="color: white;"> {{com.comment}}</p>
+            <p class="card-text" style="color: white;">
+              <b style="text-shadow: 0 0 3px #f00000, 0 0 5px #000000;"> {{com.commentUsername}} :: </b>
+              <b style="font-family:cursive">{{com.comment}}</b>
+            </p>
             </div>
     </div> 
   </div> 
   </ng-container>
 </div>
-  <form class="comment-card" style="margin: 10px;padding: 10px; background-color: rgb(74, 73, 73)" #blogForm="ngForm">
+  <form class="comment-card" style="margin: 10px;padding: 10px; background-color: rgb(110, 96, 96)" #blogForm="ngForm">
             <p style="color: black;" name="commentUsername" [(ngModel)]="comme.commentUsername"></p>
             <br>
-            <label style="color: white;">Enter your comment</label>
-            <input class="placeholder" type="text" (change)="onChangeFileField($event)" name="comment" [(ngModel)]="comme.comment" placeholder="Enter your views"/>
+            <label style="color: white; margin-right: 5px;">Enter your comment</label>
+            <input type="text" (blur)="onChangeFileField($event)" name="comment" [(ngModel)]="comme.comment"/>
+            <button type="submit" style="color: wheat;background-color: rgb(123, 30, 30);float:right" (click)="addComm()">add comment</button>
             <br>
-            <button style="color: wheat;background-color: rgb(123, 30, 30);margin: 10px;" (click)="addComm()">add comments</button>
+            <div>
+            <br>
+            <button (click)="routerIt()" style="color: wheat;background-color: rgb(123, 30, 30);margin-left: 430px;" >Go Back</button>
+            </div> 
   </form>
+</div>

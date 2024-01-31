@@ -16,6 +16,6 @@ export class BlogsService {
     let formdata:FormData=new FormData
     formdata.append("file",file)
     formdata.append("blogData",JSON.stringify(blog))
-    return this.http.post(`http://gateway:9094/dashboard/putBlogs`,formdata)
+    return this.http.post(`http://localhost:9094/dashboard/putBlogs`,formdata)
   }
 }

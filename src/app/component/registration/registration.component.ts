@@ -25,12 +25,13 @@ import { RegsiterSerService } from '../../services/regsiter-ser.service';
 
 export class RegistrationComponent{
   @ViewChild('registartion') reg: NgForm;
-  constructor(private regSer:RegsiterSerService){}
+  constructor(private regSer:RegsiterSerService,private router:Router){}
   onSubmit(reg:register)
   {
     console.log(reg)
     this.regSer.registerUser(reg).subscribe(data=>{
-      alert("Successfully shipped data")
+      alert("User registered successfully")
+      this.router.navigate(["/dashboard"])
     },error=>alert("user is not registered")
     )
   }

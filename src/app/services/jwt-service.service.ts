@@ -1,14 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { register } from '../model/register';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JwtServiceService {
-  constructor(private http:HttpClient) { }
+  credentials={
+    username:"",password:""
+  }
+  constructor(private http:HttpClient,private router:Router) { }
   generateToken(credentials:any)
   {
-    return this.http.post(`http://gateway:9094/auth/login`,credentials)
+    return this.http.post(`http://localhost:9094/auth/login`,credentials)
   }
   loginUser(token)
   {
@@ -31,10 +36,16 @@ export class JwtServiceService {
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem("userName");
+    this.router.navigate([''])
     return true;
   }
   getToken()
   {
     return localStorage.getItem("token")
+  }
+  storeUsername(userN:string)
+  {
+    localStorage.setItem("userName",userN)
   }
 }

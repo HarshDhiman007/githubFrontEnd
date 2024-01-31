@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthServService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { JwtServiceService } from '../../services/jwt-service.service';
@@ -16,7 +16,7 @@ export class LoginComponent {
   credentials={
     username:"",password:""
   }
-  constructor(private jwtSer:JwtServiceService){
+  constructor(private jwtSer:JwtServiceService,private router:Router){
   }
   temo:boolean=true;
   checkStatus(d1:string)
@@ -35,11 +35,13 @@ export class LoginComponent {
       this.jwtSer.generateToken(this.credentials).subscribe(
         (response:any)=>{
           console.log(response.token)
+          this.jwtSer.storeUsername(this.credentials.username)
           this.jwtSer.loginUser(response.token)
-          window.location.href="/dashboard"
+          this.router.navigate(["/dashboard"])
         },
         error=>{
           console.log(error)
+          alert("wrong password or username")
         } 
       )
     }

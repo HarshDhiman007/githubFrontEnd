@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { blogger } from '../../../model/blogger/blogger';
 import { BlogsService } from '../../../services/blogs.service';
 import { v4 as uuid } from 'uuid';
@@ -19,7 +19,7 @@ export class BlogsModuleComponent implements OnInit{
   ngOnInit(){
 
   }
-  constructor(private serv:BlogsService){
+  constructor(private serv:BlogsService,private router:Router){
 
   }
   generateAutoId(): string {
@@ -38,6 +38,7 @@ export class BlogsModuleComponent implements OnInit{
       next:(response)=>{
         console.log(response)
         alert("done")
+        this.router.navigate(["/dashboard"])
       },
       error:(error)=>{
         console.log(error)
